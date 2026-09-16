@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    namespace "com.fix.fastwave"
+    namespace "com.fixlink.fastwave"
     compileSdk rootProject.ext.compileSdkVersion
     defaultConfig {
-        applicationId "com.fix.fastwave"
+        applicationId "com.fixlink.fastwave"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 5
-        versionName "1.6"
+        versionCode 6
+        versionName "6.2"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
