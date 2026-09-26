@@ -1,4 +1,4 @@
-package com.fix.fastwave;
+package com.fisoladev.fastwave;
 
 import android.os.Bundle;
 import android.graphics.Color;
