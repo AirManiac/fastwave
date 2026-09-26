@@ -19,7 +19,7 @@ jobs:
         with:
           distribution: "zulu"
           java-version: "21"
-          cache: "gradle"
+          # Gradle cache disabled temporarily to flush out the corrupted 1.79 jar
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -28,13 +28,27 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --force
 
       - name: Build web app (Static Export)
         run: npm run build
 
       - name: Sync Capacitor
         run: npx cap sync android
+
+      - name: Patch Gradle (Fix Bouncy Castle Bug)
+        run: |
+          echo "
+          allprojects {
+              configurations.all {
+                  resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+                      if (details.requested.group == 'org.bouncycastle') {
+                          details.useVersion '1.78.1'
+                      }
+                  }
+              }
+          }
+          " >> android/build.gradle
 
       - name: Build Unsigned Release APK
         run: |
