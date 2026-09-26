@@ -18,8 +18,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: "zulu"
-          java-version: "21"
-          # Gradle cache disabled temporarily to flush out the corrupted 1.79 jar
+          java-version: "17" # Switched to 17
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -36,30 +35,20 @@ jobs:
       - name: Sync Capacitor
         run: npx cap sync android
 
-      - name: Patch Gradle (Fix Bouncy Castle Bug)
+      - name: Upgrade Gradle Wrapper (Fix JAR parsing bug)
         run: |
-          echo "
-          allprojects {
-              configurations.all {
-                  resolutionStrategy.eachDependency { DependencyResolveDetails details ->
-                      if (details.requested.group == 'org.bouncycastle') {
-                          details.useVersion '1.78.1'
-                      }
-                  }
-              }
-          }
-          " >> android/build.gradle
+          # Dynamically upgrades Gradle from 8.2.1 to 8.7 before building.
+          # This avoids the ASM bytecode crash without touching your local files.
+          sed -i 's/gradle-.*-all\.zip/gradle-8.7-all.zip/g' android/gradle/wrapper/gradle-wrapper.properties
 
       - name: Build Unsigned Release APK
         run: |
           cd android
           chmod +x gradlew
-          # assembleRelease creates an APK with debugging disabled
           bash ./gradlew assembleRelease
 
       - name: Upload Unsigned APK
         uses: actions/upload-artifact@v4
         with:
           name: obills-unsigned-release-apk
-          # Path points to the release APK folder
           path: android/app/build/outputs/apk/release/*.apk
