@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: "zulu"
-          java-version: "17" # Switched to 17 (standard for Capacitor Android)
+          java-version: "21" # Switched to 17 (standard for Capacitor Android)
 
       - name: Setup Node
         uses: actions/setup-node@v4
