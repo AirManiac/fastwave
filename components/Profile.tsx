@@ -304,8 +304,8 @@ const handleToggleBiometrics = async () => {
 
     setActionLoading(true);
     const endpoint = activeModal === "password" 
-      ? "https://fastwwave.com.ng/app/api/user/forgot-password/index.php"
-      : "https://fastwwave.com.ng/app/api/user/forgot-pin/index.php";
+      ? "https://fastwave.com.ng/app/api/user/forgot-password/index.php"
+      : "https://fastwave.com.ng/app/api/user/forgot-pin/index.php";
 
     try {
       const response = await fetch(endpoint, {
