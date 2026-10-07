@@ -27,7 +27,7 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install --force
+        run: npm ci
 
       - name: Build web app (Static Export)
         run: npm run build
