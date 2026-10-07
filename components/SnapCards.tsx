@@ -64,7 +64,7 @@ export default function SnapCards() {
 
     try {
       const response = await fetch(
-        `https://fastwave.com.ng/app/debug.php?token=${encodeURIComponent(
+        `https://fastwave.com.ng/app/payvessel.php?token=${encodeURIComponent(
           token
         )}`,
         { method: "POST" }

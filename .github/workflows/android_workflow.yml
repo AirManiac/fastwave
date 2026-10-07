@@ -50,5 +50,5 @@ jobs:
       - name: Upload Unsigned APK
         uses: actions/upload-artifact@v4
         with:
-          name: obills-unsigned-release-apk
+          name: fastwave-unsigned-release-apk
           path: android/app/build/outputs/apk/release/*.apk

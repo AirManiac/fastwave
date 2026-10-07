@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "767132324251",
+    "project_id": "fastwave-bd9a0",
+    "storage_bucket": "fastwave-bd9a0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:767132324251:android:0b0dd2d5a12ea0a49e113e",
+        "android_client_info": {
+          "package_name": "com.fisoladev.fastwave"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgR5kdupfxHmVdf3kLRBsKD5lCxYK-X6w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

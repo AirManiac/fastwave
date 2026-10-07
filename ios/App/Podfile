@@ -18,6 +18,7 @@ def capacitor_pods
   pod 'CapacitorToast', :path => '../../node_modules/@capacitor/toast'
   pod 'CapgoCapacitorNativeBiometric', :path => '../../node_modules/@capgo/capacitor-native-biometric'
   pod 'CapgoCapacitorPasskey', :path => '../../node_modules/@capgo/capacitor-passkey'
+  pod 'OnesignalCapacitorPlugin', :path => '../../node_modules/@onesignal/capacitor-plugin'
 end
 
 target 'App' do
