@@ -154,15 +154,15 @@ export default function SnapCards() {
                     <div>
                       <div className="flex items-center gap-2">
                         <Sparkles className="h-4 w-4 text-amber-400" />
-                        <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
+                        <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-amber-400">
                           Instant Funding
                         </span>
                       </div>
-                      <h3 className="text-xl font-semibold tracking-tight text-white mt-1">
+                      <h3 className="text-md font-semibold tracking-tight text-white mt-1">
                         {acc.bankName}
                       </h3>
                     </div>
-                    <div className="flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-500/20 px-3 py-1 text-[10px] font-bold text-amber-400 backdrop-blur-sm">
+                    <div className="flex items-center gap-1.5 rounded-full border border-amber-400/30 bg-amber-500/20 px-3 py-1 text-[9px] font-bold text-amber-400 backdrop-blur-sm">
                       <ShieldCheck className="h-3 w-3" /> VIRTUAL
                     </div>
                   </div>
