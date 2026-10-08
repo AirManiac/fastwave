@@ -158,7 +158,7 @@ export default function SnapCards() {
                           Instant Funding
                         </span>
                       </div>
-                      <h3 className="text-md font-semibold tracking-tight text-white mt-1">
+                      <h3 className="text-sm font-semibold tracking-tight text-white mt-1">
                         {acc.bankName}
                       </h3>
                     </div>
@@ -188,7 +188,7 @@ export default function SnapCards() {
                         <Copy className="h-5 w-5 text-zinc-300" />
                       )}
                     </div>
-                    <p className="text-[11px] text-zinc-300 font-semibold uppercase px-1">
+                    <p className="text-[9px] text-zinc-300 font-semibold uppercase px-1">
                       Recipient:{" "}
                       <span className="text-white ml-1">
                         {acc.accountName}
