@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: "zulu"
-          java-version: "21" # Switched to 17
+          java-version: "21"
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -27,25 +27,19 @@ jobs:
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install --force
+        run: npm ci
 
-      - name: Build web app (Static Export)
+      - name: Build web app
         run: npm run build
 
       - name: Sync Capacitor
         run: npx cap sync android
 
-      - name: Upgrade Gradle Wrapper (Fix JAR parsing bug)
-        run: |
-          # Dynamically upgrades Gradle from 8.2.1 to 8.7 before building.
-          # This avoids the ASM bytecode crash without touching your local files.
-          sed -i 's/gradle-.*-all\.zip/gradle-8.7-all.zip/g' android/gradle/wrapper/gradle-wrapper.properties
-
       - name: Build Unsigned Release APK
         run: |
           cd android
           chmod +x gradlew
-          bash ./gradlew assembleRelease
+          ./gradlew assembleRelease --stacktrace
 
       - name: Upload Unsigned APK
         uses: actions/upload-artifact@v4
