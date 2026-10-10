@@ -140,7 +140,7 @@ export default function SnapCards() {
             >
               <Card
                 style={{
-                  backgroundImage: "url('/paga_bg.jpg')",
+                  backgroundImage: "url('/account-back.jpg')",
                   backgroundSize: "cover",
                   backgroundPosition: "center",
                 }}
@@ -258,7 +258,7 @@ export default function SnapCards() {
         <div className="min-w-[90%] sm:min-w-[400px] snap-center">
           <Card
             style={{
-              backgroundImage: "url('/palmpay_resized.jpg')",
+              backgroundImage: "url('/promo-fastwave.jpg')",
               backgroundSize: "contain", /* Ensures the image fits entirely within the card */
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat", /* Prevents tiling if the image is smaller */
